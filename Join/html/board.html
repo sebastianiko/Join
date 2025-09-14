@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Join Board</title>
+        <link rel="icon" href="../img/Logo for Favicon construction.png" />
+        <link rel="stylesheet" href="../css/fonts.css" />
+        <link rel="stylesheet" href="../css/header.css" />
+        <link rel="stylesheet" href="../css/boardMain.css" />
+        <link rel="stylesheet" href="../css/boardMisc.css" />
+        <link rel="stylesheet" href="../css/boardOther.css" />
+        <link rel="stylesheet" href="../css/addTaskDropdownCategory.css" />
+        <link rel="stylesheet" href="../css/addTaskMain.css" />
+        <link rel="stylesheet" href="../css/addTaskPrioSubtask.css" />
+        <link rel="stylesheet" href="../css/addTaskResponsive.css" />
+        <link rel="stylesheet" href="../css/boardEditTask.css" />
+    </head>
+    <body>
+        <div includeHTML="header.html"></div>
+
+        <div class="board-header">
+            <div class="board-header-left">
+                <div class="board-header-left-top">
+                    <h2 class="h1-board">Board</h2>
+                    <button id="hidden-button-desktop" class="create-task-from-board" onclick="createTaskFromBoard()">
+                        <span>Add Task</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.66602 11.3327H0.666016V8.66602H8.66602V0.666016H11.3327V8.66602H19.3327V11.3327H11.3327V19.3327H8.66602V11.3327Z" fill="white" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="search-section">
+                    <div class="search-field">
+                        <input type="text" class="search-input" id="search-input-id" placeholder="Find Task" />
+                        <div class="search-icons">
+                            <div class="separator-line"></div>
+                            <button class="search"><img src="../img/search.png" alt="search" /></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="board-header-right">
+                <button id="hidden-button-mobile" class="create-task-from-board" onclick="createTaskFromBoard()">
+                    <span>Add Task</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.66602 11.3327H0.666016V8.66602H8.66602V0.666016H11.3327V8.66602H19.3327V11.3327H11.3327V19.3327H8.66602V11.3327Z" fill="white" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="board-overview">
+            <div class="board-column" id="toDoColumn" data-status="todo">
+                <div class="column-header">
+                    <h3>To do</h3>
+                    <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="createTaskFromBoard('todo')">
+                        <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647" stroke-width="2" />
+                        <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <path d="M16 12.5754L8 12.5754" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="tasks-container"></div>
+                <!-- Aufgaben-Container -->
+            </div>
+            <div class="board-column" id="inProgressColumn" data-status="in-progress">
+                <div class="column-header">
+                    <h3>In progress</h3>
+                    <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="createTaskFromBoard('in-progress')">
+                        <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647" stroke-width="2" />
+                        <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <path d="M16 12.5754L8 12.5754" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="tasks-container"></div>
+                <!-- Aufgaben-Container -->
+            </div>
+            <div class="board-column" id="awaitFeedbackColumn" data-status="await-feedback">
+                <div class="column-header">
+                    <h3>Await feedback</h3>
+                    <svg width="24" height="24" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="createTaskFromBoard('await-feedback')">
+                        <rect x="1" y="1.5" width="22" height="22" rx="7" stroke="#2A3647" stroke-width="2" />
+                        <path d="M12 8.5V16.5" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                        <path d="M16 12.5754L8 12.5754" stroke="#2A3647" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <div class="tasks-container"></div>
+                <!-- Aufgaben-Container -->
+            </div>
+            <div class="board-column" id="doneColumn" data-status="done">
+                <div class="column-header">
+                    <h3>Done</h3>
+                </div>
+                <div class="tasks-container"></div>
+                <!-- Aufgaben-Container -->
+            </div>
+        </div>
+
+        <div id="addTaskFromBoard"></div>
+
+        <div id="taskDetails"></div>
+
+        <div id="editTask"></div>
+
+        <div id="success-message-container" class="style-effects-success-message-container">
+            <div id="success-message">
+                <p>Task added to board</p>
+                <img src="../img/addTask/Icons.png" alt="success" id="succes-img" />
+            </div>
+        </div>
+
+        <script src="../js/config.js"></script>
+        <script src="../js/board.js"></script>
+        <script src="../js/utils.js"></script>
+        <script src="../js/header.js"></script>
+        <script src="../js/logout.js"></script>
+        <script src="../js/boardHTML.js"></script>
+        <script src="../js/boardUI.js"></script>
+        <script src="../js/boardHandling.js"></script>
+        <script src="../js/boardDragAndDrop1.js"></script>
+        <script src="../js/boardDragAndDrop2.js"></script>
+        <script src="../js/addTask.js"></script>
+        <script src="../js/addTaskCategoryFunctions.js"></script>
+        <script src="../js/addTaskContactsAndUserActionsFunctions.js"></script>
+        <script src="../js/addTaskValidationAndClearingFunctions.js"></script>
+        <script src="../js/addTaskSubtasks.js"></script>
+
+        <script src="../js/boardEditTask.js"></script>
+        <script src="../js/boardEditTaskContacts.js"></script>
+        <script src="../js/boardEditTaskHTML.js"></script>
+        <script src="../js/boardEditTaskSubtasks.js"></script>
+
+        <script src="../js/boardAddTask.js"></script>
+        <script src="../js/boardAddTaskContacts.js"></script>
+        <script src="../js/boardAddTaskHTML.js"></script>
+        <script src="../js/boardAddTaskSubtasks.js"></script>
+        <script src="../js/boardAddTaskClearingFunctions.js"></script>
+        <script src="../js/boardAddTaskValidationFunctions.js"></script>
+        <script src="../js/boardEditTaskValidateInputs.js"></script>
+        <script src="../js/boardUIAdvanced.js"></script>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", async () => {
+                await includeHTML();
+                updateUserProfileIcon();
+            });
+        </script>
+    </body>
+</html>

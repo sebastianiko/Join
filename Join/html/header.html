@@ -1,0 +1,49 @@
+<!-- removed <html> + <head> + <body> -->
+
+<header>
+    <div class="headerContent">
+        <div class="headerLogoMobile">
+            <a href="">
+                <img src="../img/icons/headerLogoMobile.png" alt="">
+            </a>
+        </div>
+        <span class="headerSpan">Kanban Project Management Tool</span>
+        <div class="helpAndUserProfile">
+            <div class="helpDiv">
+                <a href="help.html"><img src="../img/icons/help.png" alt=""></a>
+            </div>
+            <div class="helpDiv from-login">
+                <a href="help.html?fromLogin=true"><img src="../img/icons/help.png" alt="Help"></a>
+            </div>
+            <div class="userProfile" id="userProfileIcon" onclick="toggleUserMenu()"></div>                                                                                                <!-- needs to be rendered dynamically -->
+        </div>
+
+        <div class="user-menu-box" id="userMenuBox">
+            <div class="user-menu">
+                <a class="help-link" href="help.html">Help</a>
+                <a href="legalnotice.html">Legal Notice</a>
+                <a href="privacypolicy.html">Privacy Policy</a>
+                <a onclick="logout()">Log out</a>
+            </div>
+        </div>
+        
+    </div>
+</header>
+
+<div class="sideBar">
+    <div class="imgWrapper"><img src="../img/icons/logo.svg" alt=""></div>
+    <div class="sideBarMenu">
+        <a href="summary.html" id="summary" class="sideBarMenuButtons"><img src="../img/icons/summaryIcon.png" alt=""> Summary</a>     <!-- removed onclick-function and changed href + img src-->
+        <a href="addTask.html" id="addTask" class="sideBarMenuButtons"><img src="../img/icons/edit_square.png" alt=""> Add Task</a>         <!-- removed onclick-function and changed href + img src-->
+        <a href="board.html" id="board" class="sideBarMenuButtons"><img src="../img/icons/boardIcon.png" alt=""> Board</a>                  <!-- removed onclick-function and changed href + img src-->
+        <a href="contacts.html" id="contactsID" class="sideBarMenuButtons"><img src="../img/icons/contactsIcon.png" alt=""> Contacts</a>    <!-- removed onclick-function and changed href + img src-->
+    </div>
+    <div class="sideBarPolicyAndNotice">
+        <a href="privacypolicy.html" id="privacyPolicy" class="policyHref">Privacy Policy</a>                                 <!-- changed href -->
+        <a href="legalnotice.html" id="legalNotice" class="noticeHref">Legal notice</a>                                       <!-- changed href -->
+    </div>
+</div>
+
+<div id="landscape-warning">
+    <h2>Please rotate your device</h2>
+</div>

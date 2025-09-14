@@ -1,0 +1,587 @@
+body, html {
+    margin: 0;
+    padding: 0; 
+    background-color: #f6f7f8;
+    font-family: 'Inter', sans-serif;
+}
+
+#logInContent,
+#signUpContent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.hidden{
+    display: none !important;
+}
+
+#logo {
+    position: absolute;
+    width: 100.03px;
+    top: 80px;
+    left: 77px;  
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f6f7f8;
+    z-index: 998;
+}
+
+.sign-up-box{
+    position: absolute;
+    top: 67px;
+    right: 122px;
+    bottom: auto;
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.sign-up-box h4{
+    margin: 0;
+}
+
+.btn-sign-up{
+    color: white;
+    background-color: #2A3647;
+    border: none;
+    width: 91px;
+    padding: 15px 16px;
+}
+
+.login-container,
+.signup-container{
+    width: 625px;
+    border-radius: 30px;
+    padding: 32px 16px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.arrow-back-start{
+    position: absolute;
+    cursor: pointer;
+    top: 56px;
+    left: 52px;
+}
+
+h1{
+    margin: 0;
+    font-size: 61px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.separator{    
+    width: 120px;
+    border-bottom: 3px solid #29ABE2;
+    margin: 16px 0 32px 0;
+    margin-top: 16px;
+}
+
+form{
+    width: 422px;
+}
+
+.input-field{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 32px;    
+}
+
+.input-log-in{
+    width: 100%;
+    padding: 12px 21px 12px 21px;
+    border: 1px solid #d1d1d1;
+    border-radius: 10px;
+    outline: none;
+    height: 48px;
+    font-size: 20px;
+    box-sizing: border-box;
+}
+
+input:focus{
+    border: 1px solid #29abe2;
+}
+
+/* input:hover{
+    cursor: pointer;
+} */
+
+::placeholder{
+    color: #d1d1d1;
+}
+
+.error-message {
+    color: #ff8190;
+    font-size: 14px;
+    margin-top: -27px;
+    margin-bottom: 32px;
+    display: none;
+}
+
+input.error {
+    border-color: #ff8190;
+}
+
+.checkbox-error{
+    text-align: center;
+}
+
+.icon {
+    position: absolute;
+    right: 21px;
+    pointer-events: none;
+}
+
+.login-container .checkbox{
+    margin-left: 39px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.signup-container .checkbox{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+label{
+    display: flex;
+    align-items: center;
+    gap: 8px;   
+    font-size: 16px; 
+    margin-top: 32px;
+}
+
+.log-in-btn-container{
+    display: flex;
+    gap: 35px;
+    margin-left: 48px;
+}
+
+button{
+    border-radius: 8px;
+    padding: 15px 24px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;    
+    box-sizing: border-box;
+}
+
+.btn-log-in{
+    color: white;
+    background-color: #2A3647; 
+    border: none;    
+}
+
+.btn-log-in:hover,
+.btn-sign-up:hover{
+    background-color: #29ABE2;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-guest-log-in{
+    border: 1px solid #2A3647;
+    background-color: #ffff;
+    color: #2A3647;
+}
+
+.btn-guest-log-in:hover{
+    border: 1px solid #29ABE2;
+    color: #29ABE2;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.btn-log-in-small{
+    width: 110px;
+}
+
+.btn-guest-log-in-medium{
+    width: 177px;
+}
+
+.terms{
+    position: absolute;
+    bottom: 24px;
+    margin: 42px 0 22px 0;
+    display: flex;
+    gap: 72px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.terms-link{
+    color: #a8a8a8;
+    font-weight: 400;
+}
+
+.terms-link:hover{
+    color: #29ABE2;
+    font-weight: 600;
+}
+
+.checkbox{
+    display: flex;
+    align-items: center;
+}
+
+.input-checkbox{
+    display: none;
+}
+
+.custom-checkbox{
+    background: url(./img/unchecked.png) no-repeat center center;
+    background-size: contain;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+.input-checkbox:checked + .custom-checkbox {
+    background: url(./img/checked.png) no-repeat center center;
+    background-size: contain;
+}
+
+.privacy-policy-link{
+    color: #29ABE2;
+}
+
+.privacy-policy-link:hover{
+    text-decoration: underline;
+}
+
+.sign-up-btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, visibility 0s 0.8s, transform 0.8s ease-in-out;
+    z-index: 1000;
+}
+
+.signup-overlay.active {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.confirm-signup{
+    color: white;
+    background-color: #2A3647;
+    border: none;
+    width: 312px;
+    padding: 0 25px;
+    height: 74px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes moveLogo {
+    0% {
+        width: 274px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        width: 100.03px;
+        top: 80px;
+        left: 77px;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes fadeOutOverlay {
+    0% {
+        background: #f6f7f8;
+    }
+    100% {
+        background: transparent;
+        display: none;
+    }
+}
+
+#logInContent #logo.animate-logo {
+    animation: moveLogo 1s ease-in-out;
+    animation-fill-mode: forwards;
+    z-index: 999;
+}
+
+.overlay.animate-overlay {
+    animation: fadeOutOverlay 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.legal-text-container,
+.help-text-container{
+    display: flex;
+    position: relative;
+    top: 100px;
+    flex-direction: column;
+}
+
+.header-legal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 106px;
+    left: 328px;
+    position: relative;
+    max-width: 1014px;
+    width: -webkit-fill-available;
+    padding-right: 16px;
+}
+
+.arrow-back{
+    cursor: pointer;
+}
+
+.legal-text, .help-text{
+    gap: 24px;
+    top: 211px;
+    left: 328px;
+    position: relative;
+    max-width: 1014px;
+    padding-right: 16px;
+}
+
+h2, h3, h4, ul, p{
+    margin-bottom: 0;
+}
+
+p{
+    margin-top: 0;
+}
+h2, h3{
+    margin-top: 24px
+}
+
+.h2-legal{
+    margin-top: 0px;
+}
+
+.a-legal{
+    color: #29ABE2;
+}
+
+.custom-list {
+    list-style: none; /* Entfernt die Standard-Nummerierung */
+    counter-reset: custom-counter; /* Initialisiert einen Zähler */
+    padding-left: 0;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 56px;
+}
+
+.custom-list li::before {
+    content: counter(custom-counter) ".";
+    counter-increment: custom-counter;
+    position: absolute;
+    left: 0;
+    font-size: 27px;
+    font-weight: bold;
+    color: #000;
+}
+
+.help-text h2{
+    margin-bottom: 24px;
+}
+
+@media(max-width:1360px){
+    .header-legal,
+    .legal-text,
+    .help-text{
+        left: 0px;
+        margin-left: 12px;
+    }
+    .header-legal{
+        top: 44px;
+    }
+    .help-text,
+    .legal-text{
+        top: 105px;
+    }
+    .header-legal h1{
+        font-size: 47px;
+    }
+    .legal-text-container{
+        max-height: calc(100vh - 184px);
+        overflow-x: hidden;
+    }
+    .legal-text-container h1{
+        font-size: 28px;
+    }
+    .legal-text-container h2{
+        font-size: 20px;
+    }
+    .legal-text-container h3{
+        font-size: 18px;
+    }
+    .legal-text-container h4{
+        font-size: 15px;
+    }
+    .legal-text-container p{
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width: 768px){
+    #logo {
+        width: 64px;
+        top: 37px;
+        left: 38px;  
+    }
+    .overlay{
+        background: #2A3647;
+    }
+    @keyframes moveLogo {
+        0% {
+            width: 100.03px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            width: 74px;
+            top: 37px;
+            left: 38px;
+            transform: translate(0, 0);
+        }
+    }
+    
+    @keyframes fadeOutOverlay {
+        0% {
+            background: #2A3647;
+        }
+        100% {
+            background: transparent;
+            display: none;
+        }
+    }
+
+    h1{
+        font-size: 47px;
+    }
+    .separator{
+        width: 88px;
+    }
+    form{
+        width: 364px;
+    }
+    .log-in-btn-container{
+        flex-direction: column;
+        gap: 21px;
+        align-items: center;
+        margin-left: 0;
+    }
+    .log-in-btn-container button{
+        width: 180px;
+    }
+    .sign-up-box{
+        top: 708px;
+        justify-content: center;
+        align-items: center;
+        right: auto;
+    }
+    .login-container,
+    .signup-container{
+        width: 396px;
+        top: 160px;
+    }
+    #logInContent,
+    #signUpContent{
+        justify-content: flex-start;
+    }
+    .terms{
+        margin: 0;
+        top: 280px;
+        gap: 32px;
+        position: relative;
+        margin-bottom: 16px;
+    }
+    .terms-link{
+        font-size: 14px;
+        bottom: 16px;
+    }
+    .btn-sign-up{
+        width: 104px;
+    }
+    .arrow-back-start{
+        left: 28px;
+    }
+    .signup-overlay {
+        justify-content: flex-end;
+        transform: translateY(100%);
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .signup-overlay.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in;
+    }
+}
+
+@media (max-width: 425px){
+    h1{
+        font-size: 40px;
+    }
+    form{
+        width: 290px;
+    }
+    .log-in-btn-container{
+        gap: 17px;
+    }
+    .log-in-btn-container button{
+        width: 185.5px;
+    }
+    .button{
+        padding: 12px 21px;
+    }
+    .login-container,
+    .signup-container{
+        width: 310px;
+        top: 174px;
+    }
+    .legal-text-container h1{
+        font-size: 25px;
+    }
+}
